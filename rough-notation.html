@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Rough Notation</title>
+  <script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #fdfdfd;
+    }
+    .annotated {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <p class="annotated" id="annotate-me">Det här är en markerad text med Rough Notation.</p>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const { annotate } = window.RoughNotation;
+      const annotation = annotate(document.getElementById("annotate-me"), {
+        type: "circle",
+        color: "#e63946",
+        animationDuration: 1200,
+        padding: 5
+      });
+      annotation.show();
+    });
+  </script>
+</body>
+</html>
